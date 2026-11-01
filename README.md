@@ -1,21 +1,27 @@
-# Glamour Shots — Website (frontend)
+# Glamour Shots — Website (Next.js)
 
-Photography · Videography · Cinematography, Dhaka. Static site: plain HTML/CSS/JS, no build step.
+Photography · Videography · Cinematography, Dhaka. Next.js (App Router, TypeScript), English + বাংলা.
+
+## Pages
+`/` Home · `/about` · `/services` · `/services/[wedding|holud|engagement|birthday|cinematography|corporate]` · `/portfolio` · `/films` · `/contact`
 
 ## Run
-Open `index.html`, or `python3 -m http.server 8000` and visit http://localhost:8000.
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # production build
+```
 
-## Edit content — only `js/config.js`
-| What | Where in config |
-|---|---|
-| Phone / WhatsApp / email / social links | `contact` |
-| Address + Google Map | `address` (`mapEmbed` = src from Google Maps > Share > Embed) |
-| Photos | put files in `assets/portfolio/`, add `{src:"assets/portfolio/x.jpg", title, category}` to `gallery` |
-| YouTube films | `videos` -> `{id:"VIDEO_ID", title}` |
-| Numbers on the infographic strip | `stats` (**placeholders — confirm before launch**) |
-| Reviews | `testimonials` |
+## Deploy on Vercel
+Import the GitHub repo at vercel.com/new → Framework: Next.js → Deploy (no settings needed).
+Then add your domain in Vercel → Settings → Domains.
 
-Empty `src` / `id` slots show placeholder tiles. Includes EN/বাংলা toggle (texts in `js/main.js`).
+## Edit content — `lib/site.ts`
+Contact numbers/links, address + map, stats, reviews, services, gallery, videos, process steps — all in one file, with English and Bangla text.
+- **Photos:** put files in `public/portfolio/`, then set `src: "/portfolio/name.jpg"` in `gallery`.
+- **YouTube:** set `id` (the part after `v=`) in `videos`.
+- **Map:** Google Maps → Share → Embed → paste the `src` URL into `address.mapEmbed`.
+- Search the file for `TODO` — those values still need your real data (email, address, stats, domain).
 
 ## Backend later
-The contact form currently opens WhatsApp with the details. When the backend exists, replace the submit handler in `js/main.js` with a `fetch()` POST, and swap `config.js` for an API call for gallery/videos.
+The contact form currently opens WhatsApp (see `components/ContactForm.tsx`). Replace that with `fetch("/api/booking")` and add `app/api/booking/route.ts`. Gallery/videos can move from `lib/site.ts` to a database + admin panel.
