@@ -305,3 +305,30 @@ input.bad{border-color:#d33;background:#fff4f4}
 .form .grow{flex:1;display:flex;flex-direction:column}
 .form .grow textarea{flex:1;min-height:110px;resize:none}
 @media(max-width:991.98px){.form .grow textarea{flex:none;min-height:110px}}
+
+/* ===== v4: more vibrant palette ===== */
+:root{--hero-grad:linear-gradient(135deg,#2b0f3c 0%,#6a1b57 48%,#b5325f 100%)}
+.hero{background:radial-gradient(640px 420px at 88% 8%,rgba(255,214,120,.42),transparent 62%),radial-gradient(620px 520px at 2% 100%,rgba(255,110,150,.5),transparent 62%),radial-gradient(500px 400px at 50% 120%,rgba(123,92,214,.35),transparent 70%),var(--hero-grad)}
+.page-hero{background:radial-gradient(600px 300px at 50% 0,rgba(255,214,120,.32),transparent 65%),var(--hero-grad)}
+.band{background:radial-gradient(520px 280px at 85% 0,rgba(255,214,120,.38),transparent 60%),radial-gradient(500px 300px at 0 100%,rgba(255,110,150,.4),transparent 60%),var(--hero-grad)}
+.feat{background:var(--hero-grad)}.pk.pop{background:linear-gradient(160deg,#2b0f3c,#6a1b57 70%,#b5325f)}
+.foot{background:linear-gradient(180deg,#240c33,#1a0824)}
+.cc1{background:linear-gradient(160deg,#ff9bb8,#b3265c)}
+.cc2{background:linear-gradient(160deg,#ffe08a,#f08c1e)}
+.cc3{background:linear-gradient(160deg,#8f73ec,#2f2a7a)}
+.o2{background:radial-gradient(circle at 30% 30%,#ffc2d6,#e0507f)}
+/* soft colour glows behind sections */
+.sec{position:relative;overflow:hidden}
+.sec>.wrap{position:relative;z-index:1}
+.sec::before{content:"";position:absolute;width:420px;height:420px;left:-160px;top:-120px;border-radius:50%;background:radial-gradient(circle,rgba(232,160,180,.35),transparent 70%)}
+.sec::after{content:"";position:absolute;width:380px;height:380px;right:-140px;bottom:-120px;border-radius:50%;background:radial-gradient(circle,rgba(236,208,137,.4),transparent 70%)}
+.sec.alt::before{background:radial-gradient(circle,rgba(160,130,230,.22),transparent 70%)}
+.why{background:linear-gradient(180deg,#fff,#fdf1f5)}
+.card{background:linear-gradient(180deg,#fff,#fffaf7)}
+.stats{background:linear-gradient(90deg,#fff,#fff6f8,#fff)}
+.chip.on,.btn-gold{background:linear-gradient(135deg,#9b2d57,#d0507c)}
+.dark .btn-gold{background:linear-gradient(135deg,#ffe08a,#e8b445)}
+/* floating tip */
+.fc-tip{max-width:270px;border-radius:18px 18px 4px 18px;border:1px solid #f3d3dc;font-size:.9rem;padding:.9rem 1.2rem}
+.fc-tip::before{content:"";position:absolute}
+@media(max-width:575.98px){.fc-tip{max-width:220px}}
