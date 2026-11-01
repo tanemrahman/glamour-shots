@@ -6,7 +6,7 @@ import { T } from "@/lib/i18n";
 export default function Footer() {
   const c = site.contact;
   return (
-    <footer className="foot">
+    <footer className="foot dark">
       <div className="wrap">
         <Link href="/" className="brand"><span className="brand-mark">G</span> Glamour <em>Shots</em></Link>
         <p><T v={site.tagline} /></p>

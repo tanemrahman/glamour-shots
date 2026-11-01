@@ -5,7 +5,7 @@ import { T } from "@/lib/i18n";
 import { waLink } from "@/lib/util";
 export default function CtaBand() {
   return (
-    <section className="band"><div className="wrap">
+    <section className="band dark"><div className="wrap">
       <h2><T v={ui.common.ctaTitle} /></h2><p><T v={ui.common.ctaText} /></p>
       <div className="ctas">
         <a className="btn btn-gold" href={waLink()} target="_blank" rel="noopener"><T v={ui.common.wa} /></a>

@@ -23,7 +23,8 @@ export default function Header() {
   useEffect(() => setOpen(false), [path]);
   const isActive = (h: string) => (h === "/" ? path === "/" : path.startsWith(h.replace(/\/$/, "")));
   return (
-    <header className={"nav" + (solid || path !== "/" ? " solid" : "")}>
+    <header className={"nav" + (solid ? " solid" : "")}>
+      <div className="wrap nav-in">
       <Link href="/" className="brand"><span className="brand-mark">G</span> Glamour <em>Shots</em></Link>
       <nav className={"links" + (open ? " open" : "")} aria-label="Main">
         {items.map(([h, l]) => <Link key={h} href={h} className={isActive(h) ? "active" : ""}><T v={l} /></Link>)}
@@ -32,6 +33,7 @@ export default function Header() {
         <button className="lang" onClick={() => setLang(lang === "en" ? "bn" : "en")} aria-label="Switch language">{lang === "en" ? "বাংলা" : "English"}</button>
         <Link className="btn btn-gold sm" id="navCall" href="/contact/"><T v={ui.nav.book} /></Link>
         <button className="burger" aria-label="Menu" aria-expanded={open} onClick={() => setOpen(!open)}><span /><span /></button>
+      </div>
       </div>
     </header>
   );
