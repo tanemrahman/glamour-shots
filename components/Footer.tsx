@@ -13,6 +13,7 @@ export default function Footer() {
         <div className="sitemap">
           <Link href="/about/"><T v={ui.nav.about} /></Link>
           <Link href="/services/"><T v={ui.nav.services} /></Link>
+          <Link href="/packages/">Packages</Link>
           <Link href="/portfolio/"><T v={ui.nav.portfolio} /></Link>
           <Link href="/films/"><T v={ui.nav.films} /></Link>
           <Link href="/contact/"><T v={ui.nav.contact} /></Link>

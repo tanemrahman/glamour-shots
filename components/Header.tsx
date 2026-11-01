@@ -6,7 +6,7 @@ import { ui } from "@/lib/site";
 import { T, useLang } from "@/lib/i18n";
 
 const items = [
-  ["/", ui.nav.home], ["/about/", ui.nav.about], ["/services/", ui.nav.services],
+  ["/", ui.nav.home], ["/about/", ui.nav.about], ["/services/", ui.nav.services], ["/packages/", { en: "Packages", bn: "প্যাকেজ" }],
   ["/portfolio/", ui.nav.portfolio], ["/films/", ui.nav.films], ["/contact/", ui.nav.contact],
 ] as const;
 

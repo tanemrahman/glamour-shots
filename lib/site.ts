@@ -68,7 +68,8 @@ export const gallery: { src: string; title: string; category: Category }[] = [
 ];
 
 /* YouTube video id = the part after v= in the link. */
-export const videos: { id: string; title: string; category: Category }[] = [
+export const videos: { id: string; title: string; category: Category; fb?: string }[] = [
+  // Facebook Reel/video: { id: "", fb: "https://www.facebook.com/reel/XXXX", title: "...", category: "wedding" }
   { id: "", title: "Wedding Cinematic Highlights", category: "wedding" },
   { id: "", title: "Holud Night Film", category: "holud" },
   { id: "", title: "Birthday Highlights", category: "birthday" },
@@ -189,4 +190,39 @@ export const ui = {
     watchMore: { en: "More films on YouTube →", bn: "YouTube-এ আরও ফিল্ম →" },
     comingSoon: { en: "Video coming soon", bn: "ভিডিও শীঘ্রই আসছে" },
   },
+};
+
+/* ===== extra sections ===== */
+export const marquee = ["Wedding", "Gaye Holud", "Engagement", "Birthday", "Cinematography", "Pre-wedding", "Aqeeqah", "Corporate"];
+
+export const whyUs: { i: string; t: L; d: L }[] = [
+  { i: "📸", t: { en: "Photo + Video together", bn: "ফটো + ভিডিও একসাথে" }, d: { en: "One team for stills, film and cinema — no juggling vendors.", bn: "ছবি, ভিডিও ও সিনেমা — একই টিমে, আলাদা ভেন্ডর খুঁজতে হয় না।" } },
+  { i: "🎞", t: { en: "Cinematic style", bn: "সিনেমাটিক স্টাইল" }, d: { en: "Film-style framing, colour grading and storytelling edits.", bn: "ফিল্ম-স্টাইল ফ্রেমিং, কালার গ্রেডিং ও গল্পনির্ভর এডিট।" } },
+  { i: "🤝", t: { en: "Friendly & discreet", bn: "আন্তরিক ও মার্জিত" }, d: { en: "Clients love how comfortable we make family and guests feel.", bn: "পরিবার ও মেহমানরা আমাদের সাথে স্বস্তি বোধ করেন।" } },
+  { i: "💬", t: { en: "Quick WhatsApp replies", bn: "দ্রুত হোয়াটসঅ্যাপ রিপ্লাই" }, d: { en: "Ask about dates and packages any time — we answer fast.", bn: "তারিখ ও প্যাকেজ নিয়ে যেকোনো সময় জিজ্ঞেস করুন।" } },
+];
+
+/* Packages: TODO — replace with your real packages and prices. */
+export const packages: { name: L; tag: L; features: L[]; popular?: boolean }[] = [
+  { name: { en: "Essential", bn: "এসেনশিয়াল" }, tag: { en: "Single event", bn: "একটি ইভেন্ট" },
+    features: [{ en: "Photography coverage", bn: "ফটোগ্রাফি কভারেজ" }, { en: "Edited & colour-graded photos", bn: "এডিট ও কালার-গ্রেডেড ছবি" }, { en: "Online gallery", bn: "অনলাইন গ্যালারি" }] },
+  { name: { en: "Signature", bn: "সিগনেচার" }, tag: { en: "Most popular", bn: "সবচেয়ে জনপ্রিয়" }, popular: true,
+    features: [{ en: "Photo + video team", bn: "ফটো + ভিডিও টিম" }, { en: "Cinematic highlights film", bn: "সিনেমাটিক হাইলাইট ফিল্ম" }, { en: "Couple / family portraits", bn: "কাপল / ফ্যামিলি পোর্ট্রেট" }, { en: "Online gallery + reel teaser", bn: "অনলাইন গ্যালারি + রিল টিজার" }] },
+  { name: { en: "Royal", bn: "রয়্যাল" }, tag: { en: "Multi-day wedding", bn: "মাল্টি-ডে বিয়ে" },
+    features: [{ en: "Holud, wedding & reception", bn: "হলুদ, বিয়ে ও রিসেপশন" }, { en: "Full cinematic wedding film", bn: "পূর্ণ সিনেমাটিক ওয়েডিং ফিল্ম" }, { en: "Pre-wedding shoot", bn: "প্রি-ওয়েডিং শুট" }, { en: "Premium printed album", bn: "প্রিমিয়াম প্রিন্টেড অ্যালবাম" }] },
+];
+
+export const faqs: { q: L; a: L }[] = [
+  { q: { en: "How do I book Glamour Shots?", bn: "কীভাবে বুক করব?" }, a: { en: "Call or WhatsApp +880 1957-695469 with your date, venue and event type. We'll confirm availability and send a quote.", bn: "তারিখ, ভেন্যু ও ইভেন্টের ধরন জানিয়ে +880 1957-695469 নম্বরে কল বা হোয়াটসঅ্যাপ করুন। আমরা অ্যাভেইলেবিলিটি জানিয়ে কোটেশন দেব।" } },
+  { q: { en: "Do you do both photography and videography?", bn: "ফটো ও ভিডিও দুটোই করেন?" }, a: { en: "Yes — photography, videography and cinematography, all by one team.", bn: "হ্যাঁ — ফটোগ্রাফি, ভিডিওগ্রাফি ও সিনেমাটোগ্রাফি, সবই একই টিমে।" } },
+  { q: { en: "Which events do you cover?", bn: "কোন কোন ইভেন্ট কভার করেন?" }, a: { en: "Weddings, holud, engagements, birthdays, family and corporate events.", bn: "বিয়ে, গায়ে হলুদ, এনগেজমেন্ট, জন্মদিন, পারিবারিক ও কর্পোরেট ইভেন্ট।" } },
+  { q: { en: "Can you travel outside Dhaka?", bn: "ঢাকার বাইরে যাবেন?" }, a: { en: "Message us the location and date and we'll let you know.", bn: "লোকেশন ও তারিখ জানান, আমরা জানিয়ে দেব।" } },
+  { q: { en: "When will I receive my photos and film?", bn: "ছবি ও ফিল্ম কবে পাব?" }, a: { en: "Delivery depends on the size of the event; we agree the timeline with you when you book.", bn: "ইভেন্টের আকারের উপর নির্ভর করে; বুকিংয়ের সময় আমরা সময়সীমা ঠিক করে নিই।" } },
+];
+
+/* Real event taken from the Facebook page. */
+export const featured = {
+  title: { en: "Haldi Night of Ramisha & Adam", bn: "রামিশা ও আদমের হলুদ নাইট" },
+  date: { en: "17 February 2025", bn: "১৭ ফেব্রুয়ারি ২০২৫" },
+  text: { en: "A night of music, marigolds and laughter — covered by Glamour Shots.", bn: "গান, গাঁদা ফুল আর হাসির এক রাত — গ্ল্যামার শটসের ক্যামেরায়।" },
 };

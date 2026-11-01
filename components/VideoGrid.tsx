@@ -10,7 +10,9 @@ export default function VideoGrid({ limit }: { limit?: number }) {
   return (
     <>
       <div className="videos">
-        {list.map((v, i) => v.id ? (
+        {list.map((v, i) => v.fb ? (
+          <div key={v.fb} className="vid fbv"><iframe src={`https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(v.fb)}&show_text=false&width=560`} allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowFullScreen loading="lazy" title={v.title} /></div>
+        ) : v.id ? (
           <button key={v.id} className="vid" aria-label={"Play " + v.title} onClick={() => setPlaying(v.id)}>
             {playing === v.id
               ? <iframe src={`https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.id)}?autoplay=1&rel=0`} allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowFullScreen title={v.title} />
