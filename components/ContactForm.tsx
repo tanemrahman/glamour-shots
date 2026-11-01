@@ -30,7 +30,7 @@ export default function ContactForm() {
         <label><span>{t.event}</span><select name="event">{events.map(x => <option key={x}>{x}</option>)}</select></label>
         <label><span>{t.date}</span><input name="date" type="date" /></label>
       </div>
-      <label><span>{t.msg}</span><textarea name="msg" rows={3} placeholder={t.ph} /></label>
+      <label className="grow"><span>{t.msg}</span><textarea name="msg" rows={3} placeholder={t.ph} /></label>
       <button className="btn btn-gold" type="submit">{t.send}</button>
       <p className="hint">{t.hint}</p>
     </form>
